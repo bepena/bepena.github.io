@@ -2749,9 +2749,11 @@ p.stock.out-of-stock {
 </div>
 <?php add_revslider(\'Carrusel-Carta-Astral\'); ?>
 
-    <a href="javascript:print_page()" alt="">
-        <i class="material-icons" style="font-size: 60px;color: #bfbfbf;">print</i>
-    </a>
+
+        <div style="display: grid;">
+            <img src="images/qr.png" style="margin-left: auto; margin-right: auto; width: 200px;"/>
+        </div>
+
 
          <div class="col-md-7">
 	     <div id="TETRA_TRANSITS"></div>
@@ -3361,22 +3363,23 @@ astrology_COLOR_SIGNS = [astrology_COLOR_fire,astrology_COLOR_earth,astrology_CO
                     userInfo.longitude = document.getElementById("long_deg").value + "°" + document.getElementById(
                         "long_min").value + "'";
                     userInfo.city = document.getElementById("cname").value;
+                    console.log("- - USER INFO - - ", userInfo)
 
-                    jQuery.ajax({
-                        type: "POST",
-                        url: "https://miastral.com" + "/wp-json/carta-astral/v1/save-new-entry",
-                        data: userInfo,
-                        success: function(data) {
-                            console.log('success');
-                            //console.log(data);
-                        },
-                        error: function(req, err) {
-                            console.log('error')
-                            console.log(req);
-                            console.log(err);
-                        }
-                        // data: userInfo,
-                    })
+                    // jQuery.ajax({
+                    //     type: "POST",
+                    //     url: "https://miastral.com" + "/wp-json/carta-astral/v1/save-new-entry",
+                    //     data: userInfo,
+                    //     success: function(data) {
+                    //         console.log('success');
+                    //         //console.log(data);
+                    //     },
+                    //     error: function(req, err) {
+                    //         console.log('error')
+                    //         console.log(req);
+                    //         console.log(err);
+                    //     }
+                    //     // data: userInfo,
+                    // })
 
                     fft_bn();
                     calc();
