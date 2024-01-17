@@ -2748,6 +2748,11 @@ p.stock.out-of-stock {
 	</div>
 </div>
 <?php add_revslider(\'Carrusel-Carta-Astral\'); ?>
+
+    <a href="javascript:print_page()" alt="">
+        <i class="material-icons" style="font-size: 60px;color: #bfbfbf;">print</i>
+    </a>
+
          <div class="col-md-7">
 	     <div id="TETRA_TRANSITS"></div>
 	</div>
@@ -3155,6 +3160,7 @@ astrology_COLOR_SIGNS = [astrology_COLOR_fire,astrology_COLOR_earth,astrology_CO
             document.getElementById('ismobile').style.display = 'block';
         }
 
+
         function print_page() {
             var WinPrint = window.open('', '',
                 'left=50,top=50,width=800,height=600,toolbar=0,scrollbars=1,resizable=0,status=0,toolbar=1');
@@ -3202,6 +3208,7 @@ astrology_COLOR_SIGNS = [astrology_COLOR_fire,astrology_COLOR_earth,astrology_CO
             WinPrint.document.close();
             WinPrint.focus();
         };
+
 
         function print_page_testing() {
             var prtContent = document.getElementById("sap");
