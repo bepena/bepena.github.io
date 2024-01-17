@@ -1,0 +1,21 @@
+{
+  "name": "Carta Astral - Crush Power Music",
+  "short_name": "Carta Astral",
+  "description": "Carta Astral - Crush Power Music",
+
+  "scope": "/",
+  "start_url": "/",
+
+  "background_color": "#FD8549",
+  "theme_color": "#FD8549",
+
+  "display": "standalone",
+
+  "icons": [
+    {
+      "src": "/images/icon.png",
+      "type": "image/png",
+      "sizes": "700x700"
+    }
+  ]
+}

@@ -1182,7 +1182,9 @@ body.member-logged-in #elementor-popup-modal-942274, body.member-logged-in  #ele
 p.stock.out-of-stock {
     display: none;
 }		</style>
-		</head>
+    <link rel="canonical" href="https://bepena.github.io/" />
+    <link rel="manifest" href="/manifest.webmanifest">
+</head>
 <body class="page-template-default page page-id-927002 page-child parent-pageid-922522 theme-hello-elementor woocommerce-no-js tribe-no-js woo-variation-swatches wvs-behavior-blur wvs-theme-miastral wvs-show-label wvs-tooltip e-lazyload elementor-default elementor-kit-921839 elementor-page elementor-page-927002">
 
 
@@ -1196,7 +1198,7 @@ p.stock.out-of-stock {
 	<div class="page-content">
 				<div data-elementor-type="wp-page" data-elementor-id="927002" class="elementor elementor-927002" data-elementor-post-type="page">
 					
-		<div class="elementor-element elementor-element-433d802 e-flex e-con-boxed e-con e-parent" data-id="433d802" data-element_type="container" data-settings="{&quot;container_type&quot;:&quot;flex&quot;,&quot;content_width&quot;:&quot;boxed&quot;}" data-core-v316-plus="true">
+		<div class="elementor-element elementor-element-433d802 e-flex e-con-boxed e-con e-parent" data-id="433d802" data-element_type="container" data-settings="{&quot;container_type&quot;:&quot;flex&quot;,&quot;content_width&quot;:&quot;boxed&quot;}" data-core-v316-plus="true" style="padding-left: 30px; padding-right: 30px;">
 					<div class="e-con-inner">
 				<div class="elementor-element elementor-element-01252fe elementor-widget elementor-widget-shortcode" data-id="01252fe" data-element_type="widget" data-widget_type="shortcode.default">
 				<div class="elementor-widget-container">
@@ -10865,7 +10867,18 @@ var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
-<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-6f80b27699fb12b2e7e","applicationID":"1034747726","transactionName":"MVZbZERQXkoAAUQMCggceFNCWF9XTgteAQAe","queueTime":0,"applicationTime":2620,"atts":"HRFYEgxKTUQ=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-6f80b27699fb12b2e7e","applicationID":"1034747726","transactionName":"MVZbZERQXkoAAUQMCggceFNCWF9XTgteAQAe","queueTime":0,"applicationTime":2620,"atts":"HRFYEgxKTUQ=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+
+<script>
+      if (navigator.serviceWorker) {
+        navigator.serviceWorker.register (
+          '/sw.js',
+          {scope: '/'}
+        )
+      }
+  </script>
+
+</body>
 </html>
 
 <!-- plugin=object-cache-pro client=phpredis metric#hits=51464 metric#misses=24 metric#hit-ratio=100.0 metric#bytes=6907937 metric#prefetches=0 metric#store-reads=491 metric#store-writes=7 metric#store-hits=974 metric#store-misses=11 metric#sql-queries=22 metric#ms-total=2474.95 metric#ms-cache=119.70 metric#ms-cache-avg=0.2408 metric#ms-cache-ratio=4.8 -->
