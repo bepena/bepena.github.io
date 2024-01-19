@@ -1182,8 +1182,13 @@ body.member-logged-in #elementor-popup-modal-942274, body.member-logged-in  #ele
 p.stock.out-of-stock {
     display: none;
 }		</style>
-    <link rel="canonical" href="https://bepena.github.io/" />
+    <link rel="canonical" href="https://crushpowermusic.github.io" />
     <link rel="manifest" href="/manifest.webmanifest">
+    <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+
+
+
+
 </head>
 <body class="page-template-default page page-id-927002 page-child parent-pageid-922522 theme-hello-elementor woocommerce-no-js tribe-no-js woo-variation-swatches wvs-behavior-blur wvs-theme-miastral wvs-show-label wvs-tooltip e-lazyload elementor-default elementor-kit-921839 elementor-page elementor-page-927002">
 
@@ -2751,7 +2756,7 @@ p.stock.out-of-stock {
 
 
         <div style="display: grid;">
-            <img src="images/qr.png" style="margin-left: auto; margin-right: auto; width: 200px;"/>
+            <div id="qrcode" style="margin-left: auto; margin-right: auto; width: 200px;"></div>
         </div>
 
 
@@ -3328,6 +3333,8 @@ astrology_COLOR_SIGNS = [astrology_COLOR_fire,astrology_COLOR_earth,astrology_CO
             c = eval(document.getElementById("long_deg").value);
             d = eval(document.getElementById("long_min").value);
             my_name = document.getElementById("name").value;
+
+    
             if (my_name == null || my_name == "") {
                 document.getElementById("name_error").innerHTML =
                     '<br><h5 style="color: red;text-align: center;"><b>Ingresa un nombre válido, por favor</b></h5>';
@@ -3513,7 +3520,32 @@ astrology_COLOR_SIGNS = [astrology_COLOR_fire,astrology_COLOR_earth,astrology_CO
         </script>
 
         <script>
+
+        
+
+
         function start_loading() {
+            var qrUrl = new URL("https://crushpowermusic.github.io");
+            qrUrl.searchParams.set("lat_deg", document.getElementById("lat_deg").value)
+            qrUrl.searchParams.set("lat_min", document.getElementById("lat_min").value)
+            qrUrl.searchParams.set("long_deg", document.getElementById("long_deg").value)
+            qrUrl.searchParams.set("long_min", document.getElementById("long_min").value)
+            qrUrl.searchParams.set("name", document.getElementById("name").value)
+            qrUrl.searchParams.set("day", document.getElementById("day").value)
+            qrUrl.searchParams.set("month", document.getElementById("month").value)
+            qrUrl.searchParams.set("year", document.getElementById("year").value)
+            qrUrl.searchParams.set("hour", document.getElementById("hour").value)
+            qrUrl.searchParams.set("minute", document.getElementById("minute").value)
+
+            const qrcode = new QRCode(document.getElementById('qrcode'), {
+                text: qrUrl.toString(),
+                width: 200,
+                height: 200,
+                colorDark : '#000',
+                colorLight : '#fff',
+                correctLevel : QRCode.CorrectLevel.H
+            });
+
             var email = document.getElementById("email").value;
             if (!isValidEmail(email)) {
 
@@ -7889,6 +7921,7 @@ astrology_COLOR_SIGNS = [astrology_COLOR_fire,astrology_COLOR_earth,astrology_CO
             dd = eval(document.getElementById("day").value);
             hh = eval(document.getElementById("hour").value);
             mm = eval(document.getElementById("minute").value);
+
             ss = 0;
             var nname = document.getElementById("name").value;
             var name_div = document.getElementById("myName");
@@ -10844,6 +10877,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         )
       }
   </script>
+
+  <script>
+    let params = new URL(document.location).searchParams;
+    if (params.size > 0) {
+        document.getElementById("lat_deg").value = parseInt(params.get("lat_deg"))
+        document.getElementById("lat_min").value = parseInt(params.get("lat_min"))
+        document.getElementById("long_deg").value = parseInt(params.get("long_deg"))
+        document.getElementById("long_min").value = parseInt(params.get("long_min"))
+        
+        document.getElementById("hour").value = parseInt(params.get("hour"))
+        document.getElementById("minute").value = parseInt(params.get("minute"))
+        document.getElementById("day").value = parseInt(params.get("day"))
+        document.getElementById("month").value = parseInt(params.get("month"))
+        document.getElementById("year").value = parseInt(params.get("year"))
+    
+        document.getElementById("name").value = params.get("name")        
+        document.getElementById("cname").value = params.get("cname")
+
+        start_loading()
+    }
+
+
+
+
+
+</script>
+
 
 </body>
 </html>
